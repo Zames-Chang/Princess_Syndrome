@@ -37,4 +37,11 @@ class Princess_Syndrome(object):
         self.table = pd.DataFrame(np.reshape(temp, (len(self.characteristic), len(self.peoples))),columns = self.peoples)
         self.table.index = self.characteristic
         display(self.table)
+    def get_table(self):
+        temp = []
+        for v in self.prob.variables():
+            temp.append(v.varValue)
+        self.table = pd.DataFrame(np.reshape(temp, (len(self.characteristic), len(self.peoples))),columns = self.peoples)
+        self.table.index = self.characteristic
+        return self.table
         
